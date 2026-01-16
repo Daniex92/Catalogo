@@ -1,6 +1,0 @@
-# Configuración para GitHub Pages
-# Este archivo indica a GitHub que sirva el sitio desde la raíz
-
-jekyll:
-  input: docs
-  output: _site
