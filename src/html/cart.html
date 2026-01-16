@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Artesanías del Taller</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" stroke="#A86A3D" stroke-width="1.5"/>
+                        <path d="M20 8 L28 28 L12 28 Z" fill="#A86A3D" opacity="0.6"/>
+                    </svg>
+                    <span>Artesanías</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalog.html">Catálogo</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="cart.html" class="active">Carrito</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <ul class="breadcrumb-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><span>/</span></li>
+            <li>Carrito de Compras</li>
+        </ul>
+    </nav>
+
+    <!-- Cart Header -->
+    <section class="cart-header">
+        <h1>Carrito de Compras</h1>
+        <p>Revisa y finaliza tu pedido</p>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="cart-container">
+        <div class="cart-items-section">
+            <h2>Productos en tu carrito</h2>
+            <div id="cart-items" class="cart-items-table">
+                <!-- Items serán generados por JavaScript -->
+            </div>
+            <div class="cart-empty" id="cart-empty" style="display: none; text-align: center; padding: 4rem 2rem;">
+                <p style="font-size: 1.1rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">Tu carrito está vacío</p>
+                <a href="catalog.html" class="btn btn-primary">Explorar Catálogo</a>
+            </div>
+        </div>
+
+        <div class="cart-sidebar">
+            <!-- Summary -->
+            <div class="cart-summary">
+                <h3 style="color: var(--color-primary); margin-bottom: 1.5rem; font-size: 1.2rem;">Resumen del Pedido</h3>
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Envío:</span>
+                    <span id="shipping">Cálculo en checkout</span>
+                </div>
+                <div class="summary-row" style="border-top: 2px solid var(--color-border); padding-top: 1rem; margin-top: 1rem;">
+                    <strong style="color: var(--color-primary);">Total:</strong>
+                    <strong id="total" style="color: var(--color-secondary); font-size: 1.2rem;">$0.00</strong>
+                </div>
+            </div>
+
+            <!-- Order Form -->
+            <div class="order-form">
+                <h3 style="color: var(--color-primary); margin-bottom: 1.5rem; font-size: 1.2rem;">Datos de Envío</h3>
+                <form id="order-form">
+                    <div class="form-group">
+                        <label for="full-name">Nombre Completo *</label>
+                        <input type="text" id="full-name" name="full-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Teléfono *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Dirección de Envío *</label>
+                        <input type="text" id="address" name="address" placeholder="Calle y número" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">Ciudad *</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Notas Adicionales (opcional)</label>
+                        <textarea id="notes" name="notes" placeholder="Instrucciones especiales para la entrega..."></textarea>
+                    </div>
+
+                    <div id="order-message" style="display: none; margin-bottom: 1.5rem; padding: 1rem; border-radius: 2px;"></div>
+
+                    <button type="submit" class="submit-button" id="submit-button">Finalizar Compra</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Confirmación -->
+    <div id="confirmation-modal" class="confirmation-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>¡Pedido Realizado!</h2>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">✓</div>
+                <p>Tu pedido ha sido realizado exitosamente.</p>
+                <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin-top: 1rem;">
+                    Pronto nos pondremos en contacto contigo para confirmar los detalles de tu compra y el envío.
+                </p>
+                <p style="font-size: 0.9rem; color: var(--color-neutral); margin-top: 1rem;">
+                    Número de pedido: <strong id="order-number"></strong>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="index.html" class="btn btn-primary" style="width: 100%; text-align: center;">Volver al Inicio</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Artesanías del Taller</h3>
+                <p>Piezas únicas hechas a mano con dedicación y pasión por la artesanía tradicional.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalog.html">Catálogo</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>📞 321 993 1584</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Artesanías del Taller. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/cart-functions.js"></script>
+</body>
+</html>
