@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Artesanías del Taller</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" stroke="#A86A3D" stroke-width="1.5"/>
+                        <path d="M20 8 L28 28 L12 28 Z" fill="#A86A3D" opacity="0.6"/>
+                    </svg>
+                    <span>Artesanías</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalog.html" class="active">Catálogo</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="cart.html">Carrito</a></li>
+                </ul>
+                <div class="cart-button" style="position: relative;">
+                    <a href="cart.html" style="text-decoration: none; color: var(--color-secondary); display: flex; align-items: center;" title="Mi Carrito">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="min-width: 24px;">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        <span class="cart-badge"></span>
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <ul class="breadcrumb-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><span>/</span></li>
+            <li>Catálogo</li>
+        </ul>
+    </nav>
+
+    <!-- Catalog Header -->
+    <section class="catalog-header">
+        <h1>Nuestro Catálogo</h1>
+        <p>Explora nuestra colección completa de artesanías únicas</p>
+        
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="ceramica">Cerámica</button>
+            <button class="filter-btn" data-filter="tejidos">Tejidos</button>
+            <button class="filter-btn" data-filter="madera">Madera</button>
+            <button class="filter-btn" data-filter="otros">Otros</button>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <article class="product-card" data-category="ceramica">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=500&h=500&fit=crop" alt="Cerámica tejida">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Cerámica Tejida</h3>
+                        <p class="product-description">Pieza única de cerámica con textura tejida a mano. Diseño minimalista perfecto para espacios modernos.</p>
+                        <a href="product-detail.html?id=1" class="btn btn-secondary">Ver Detalles</a>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="product-card" data-category="ceramica">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=500&h=500&fit=crop" alt="Maceta de cerámica">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Maceta Natural</h3>
+                        <p class="product-description">Maceta de cerámica con acabado natural y rústico. Ideal para plantas y decoración.</p>
+                        <a href="product-detail.html?id=2" class="btn btn-secondary">Ver Detalles</a>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-card" data-category="ceramica">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=500&h=500&fit=crop" alt="Plato decorativo">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Plato Decorativo</h3>
+                        <p class="product-description">Plato con diseño geométrico pintado a mano. Pieza artística y funcional.</p>
+                        <a href="product-detail.html?id=3" class="btn btn-secondary">Ver Detalles</a>
+                    </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="product-card" data-category="ceramica">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=500&h=500&fit=crop" alt="Tazón artesanal">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tazón Artesanal</h3>
+                        <p class="product-description">Tazón de cerámica vidriada con acabado suave. Piezas únicas hechas a mano.</p>
+                        <a href="product-detail.html?id=4" class="btn btn-secondary">Ver Detalles</a>
+                    </div>
+                </article>
+
+                <!-- Product 5 -->
+                <article class="product-card" data-category="tejidos">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=500&h=500&fit=crop" alt="Tejido artesanal">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tapete Tejido</h3>
+                        <p class="product-description">Tapete tejido a mano con fibras naturales. Diseño tradicional con acabado elegante.</p>
+                        <a href="product-detail.html?id=5" class="btn btn-secondary">Ver Detalles</a>
+                    </div>
+                </article>
+
+                <!-- Product 6 -->
+                <article class="product-card" data-category="tejidos">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=500&h=500&fit=crop" alt="Cojín decorativo">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Cojín Decorativo</h3>
+                        <p class="product-description">Cojín hecho con telas tejidas artesanalmente. Confort y estilo en tu hogar.</p>
+                        <a href="product-detail.html?id=6" class="btn btn-secondary">Ver Detalles</a>
+                    </div>
+                </article>
+
+                <!-- Product 7 -->
+                <article class="product-card" data-category="madera">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=500&h=500&fit=crop" alt="Tabla de madera">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tabla de Corte</h3>
+                        <p class="product-description">Tabla de corte de madera maciza con acabado natural. Práctica y decorativa.</p>
+                        <a href="product-detail.html?id=7" class="btn btn-secondary">Ver Detalles</a>
+                    </div>
+                </article>
+
+                <!-- Product 8 -->
+                <article class="product-card" data-category="otros">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=500&h=500&fit=crop" alt="Vaso artesanal">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Vaso Artesanal</h3>
+                        <p class="product-description">Vaso de vidrio soplado artesanalmente. Cada pieza es única.</p>
+                        <a href="product-detail.html?id=8" class="btn btn-secondary">Ver Detalles</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Artesanías del Taller</h3>
+                <p>Creando piezas únicas desde el corazón.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalog.html">Catálogo</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>📞 321 993 1584</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Artesanías del Taller. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
