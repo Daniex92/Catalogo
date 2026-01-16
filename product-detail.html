@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto - Artesanías del Taller</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" stroke="#8b7355" stroke-width="1.5"/>
+                        <path d="M20 8 L28 28 L12 28 Z" fill="#8b7355" opacity="0.6"/>
+                    </svg>
+                    <span>Artesanías</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalog.html">Catálogo</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <ul class="breadcrumb-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><span>/</span></li>
+            <li><a href="catalog.html">Catálogo</a></li>
+            <li><span>/</span></li>
+            <li id="product-breadcrumb">Producto</li>
+        </ul>
+    </nav>
+
+    <!-- Product Detail -->
+    <section class="product-detail">
+        <div class="product-detail-image">
+            <img id="main-image" src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=800&h=800&fit=crop" alt="Producto">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-md); margin-top: var(--spacing-lg);">
+                <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=200&h=200&fit=crop" alt="Vista 1" style="cursor: pointer; border: 2px solid transparent; transition: var(--transition);" onclick="changeImage(this.src)">
+                <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=200&h=200&fit=crop" alt="Vista 2" style="cursor: pointer; border: 2px solid transparent; transition: var(--transition);" onclick="changeImage(this.src)">
+                <img src="https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=200&h=200&fit=crop" alt="Vista 3" style="cursor: pointer; border: 2px solid transparent; transition: var(--transition);" onclick="changeImage(this.src)">
+            </div>
+        </div>
+
+        <div class="product-detail-info">
+            <h1 class="product-detail-name" id="product-name">Cerámica Tejida</h1>
+            
+            <div class="product-detail-price" id="product-price">$85.00</div>
+
+            <div style="display: flex; gap: var(--spacing-sm); margin: var(--spacing-md) 0; align-items: center;">
+                <span style="color: var(--color-secondary); font-size: 0.9rem;">★★★★★</span>
+                <span style="color: var(--color-neutral); font-size: var(--font-size-sm);">(24 reseñas)</span>
+            </div>
+
+            <p class="product-detail-description" id="product-description">
+                Pieza única de cerámica con textura tejida a mano. Creada utilizando técnicas tradicionales de cerámica, esta pieza combina funcionalidad y arte en un solo objeto.
+            </p>
+
+            <div class="product-detail-specs">
+                <h3>Especificaciones</h3>
+                <ul class="specs-list">
+                    <li>
+                        <span>Tipo de Producto:</span>
+                        <span id="spec-type">Cerámica</span>
+                    </li>
+                    <li>
+                        <span>Dimensiones:</span>
+                        <span id="spec-dimensions">15 cm x 15 cm x 20 cm</span>
+                    </li>
+                    <li>
+                        <span>Material:</span>
+                        <span id="spec-material">Arcilla natural, vidriada</span>
+                    </li>
+                    <li>
+                        <span>Cuidados:</span>
+                        <span id="spec-care">Lavable a mano, no apto para lavavajillas</span>
+                    </li>
+                    <li>
+                        <span>Fabricación:</span>
+                        <span id="spec-making">Hecho a mano - Pieza única</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="product-detail-quantity">
+                <div class="quantity-input">
+                    <button type="button" onclick="decreaseQuantity()">−</button>
+                    <input type="number" id="quantity" value="1" min="1">
+                    <button type="button" onclick="increaseQuantity()">+</button>
+                </div>
+                <span id="stock-status" style="color: var(--color-primary); font-weight: 500;">En Stock</span>
+            </div>
+
+            <button class="add-to-cart" onclick="addToCart()">Agregar al Carrito</button>
+
+            <div style="padding-top: var(--spacing-lg); border-top: 1px solid var(--color-border); margin-top: var(--spacing-lg);">
+                <p style="font-size: var(--font-size-sm); color: var(--color-neutral); margin-bottom: var(--spacing-sm);">
+                    <strong>Envío gratis</strong> en compras mayores a $100
+                </p>
+                <p style="font-size: var(--font-size-sm); color: var(--color-neutral); margin-bottom: var(--spacing-sm);">
+                    <strong>Garantía:</strong> Satisfacción 100% garantizada
+                </p>
+                <p style="font-size: var(--font-size-sm); color: var(--color-neutral);">
+                    <strong>Devolución:</strong> 30 días para devolver sin preguntas
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products Section -->
+    <section style="padding: var(--spacing-xxl) var(--spacing-lg); background-color: #ffffff; border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <h2 class="section-title">Productos Relacionados</h2>
+            
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=500&h=500&fit=crop" alt="Maceta Natural">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Maceta Natural</h3>
+                        <p class="product-description">Maceta de cerámica con acabado natural y rústico</p>
+                        <a href="product-detail.html?id=2" class="btn btn-secondary">Ver Detalles</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=500&h=500&fit=crop" alt="Plato Decorativo">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Plato Decorativo</h3>
+                        <p class="product-description">Plato con diseño geométrico pintado a mano</p>
+                        <a href="product-detail.html?id=3" class="btn btn-secondary">Ver Detalles</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=500&h=500&fit=crop" alt="Tazón Artesanal">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tazón Artesanal</h3>
+                        <p class="product-description">Tazón de cerámica vidriada con acabado suave</p>
+                        <a href="product-detail.html?id=4" class="btn btn-secondary">Ver Detalles</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=500&h=500&fit=crop" alt="Tapete Tejido">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tapete Tejido</h3>
+                        <p class="product-description">Tapete tejido a mano con fibras naturales</p>
+                        <a href="product-detail.html?id=5" class="btn btn-secondary">Ver Detalles</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Artesanías del Taller</h3>
+                <p>Creando piezas únicas desde el corazón.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalog.html">Catálogo</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>Email: info@artesaniastaller.com</p>
+                <p>Teléfono: +34 123 456 789</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Artesanías del Taller. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function changeImage(src) {
+            document.getElementById('main-image').src = src;
+        }
+
+        function increaseQuantity() {
+            const input = document.getElementById('quantity');
+            input.value = parseInt(input.value) + 1;
+        }
+
+        function decreaseQuantity() {
+            const input = document.getElementById('quantity');
+            if (parseInt(input.value) > 1) {
+                input.value = parseInt(input.value) - 1;
+            }
+        }
+
+        function addToCart() {
+            const quantity = document.getElementById('quantity').value;
+            const productName = document.getElementById('product-name').textContent;
+            alert(`Se agregaron ${quantity} ${productName}(s) al carrito`);
+        }
+    </script>
+</body>
+</html>
